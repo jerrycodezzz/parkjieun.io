@@ -17,7 +17,7 @@ export default defineConfig({
     {
       text: 'Posting',
       items: [
-        { text: 'emit 타입 선언하기', link: '/posting/post-a' },
+        { text: '백엔드가 NestJS로 API를 바꿨다는데... 프론트는 어디부터 봐야 할까?', link: '/posting/post-a' },
         { text: 'Pinia 전역 설정', link: '/posting/post-b' }
       ]
     }
