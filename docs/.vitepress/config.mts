@@ -8,8 +8,8 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Posting', link: '/posting/' },
-      { text: 'Trouble-Shooting', link: '/trouble-shooting/' },
+      { text: 'LOG', link: '/posting/' },
+      { text: 'DEBUG', link: '/debug/' },
       { text: 'Portfolio', link: '/portfolio/' },
     ],
 
@@ -20,9 +20,9 @@ export default defineConfig({
     },
 
     sidebar: {
-      '/posting/': [
+      '/portfolio/': [
         {
-          text: 'Posting',
+          text: 'Portfolio',
           items: [
             {
               text: '백엔드가 NestJS로 API를 바꿨다는데... 프론트는 어디부터 봐야 할까?',
@@ -32,9 +32,21 @@ export default defineConfig({
           ],
         },
       ],
-      '/trouble-shooting/': [
+      '/posting/': [
         {
-          text: 'Trouble-Shooting',
+          text: 'LOG',
+          items: [
+            {
+              text: '백엔드가 NestJS로 API를 바꿨다는데... 프론트는 어디부터 봐야 할까?',
+              link: '/posting/post-a',
+            },
+            { text: 'Pinia 전역 설정', link: '/posting/post-b' },
+          ],
+        },
+      ],
+      '/debug/': [
+        {
+          text: 'DEBUG',
           items: [
             { text: 'axios 인증 오류', link: '/trouble-shooting/error-a' },
             { text: 'vite alias 안 먹힘', link: '/trouble-shooting/error-b' },
