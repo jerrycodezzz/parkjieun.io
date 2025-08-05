@@ -1,0 +1,47 @@
+/* [advice from AI] Tailwind CSS 기본 directives */
+@import "tailwindcss";
+
+/* [advice from AI] 포트폴리오용 기본 스타일 및 스무스 스크롤 설정 */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* [advice from AI] Tailwind CSS의 line-clamp 유틸리티 추가 */
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* [advice from AI] 애니메이션 성능 최적화 */
+* {
+  box-sizing: border-box;
+}
+
+/* [advice from AI] 스크롤바 스타일링 (선택사항) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
