@@ -2,20 +2,23 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
 import { personalInfo } from "../data/projects";
-
+import { Button } from "@jerrycodezzz/ui-kit";
 function Hero() {
   return (
     <section
       id="hero"
-      className=" min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100">
-      <div className="container mx-auto px-6 text-center">
+      className="min-h-screen flex items-center justify-center from-bg-white to-primary-30 bg-gradient-to-t">
+      <div className="w-full max-w-none mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}>
-          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
+          <h1 className="text-5xl md:text-7xl font-extralight text-gray-900 mb-6">
             안녕하세요, <br />
-            <span className="text-blue-600">{personalInfo.name}</span>입니다
+            <span className="text-primary-80 font-light">
+              {personalInfo.name}
+            </span>
+            입니다
           </h1>
 
           <motion.p
@@ -30,25 +33,22 @@ function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={() =>
-                document
-                  .getElementById("work")
-                  .scrollIntoView({ behavior: "smooth" })
-              }
-              className="px-8 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl">
-              프로젝트 보기
-            </button>
-            <button
-              onClick={() =>
-                document
-                  .getElementById("contact")
-                  .scrollIntoView({ behavior: "smooth" })
-              }
-              className="px-8 py-3 border-2 border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-600 hover:text-white transition-colors">
-              연락하기
-            </button>
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button
+              type="primary"
+              size="lg"
+              onClick={() => {
+                const element = document.getElementById("portfolio");
+                if (element) {
+                  // 네비게이션 바 높이를 동적으로 계산 (폴백 포함)
+                  const navbar = document.querySelector("nav");
+                  const navHeight = navbar ? navbar.offsetHeight + 30 : 120;
+                  const elementPosition = element.offsetTop - navHeight;
+                  window.scrollTo({ top: elementPosition, behavior: "smooth" });
+                }
+              }}>
+              프로젝트 보러가기
+            </Button>
           </motion.div>
         </motion.div>
 

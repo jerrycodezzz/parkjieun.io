@@ -1,16 +1,25 @@
 // [advice from AI] 상단 고정 네비게이션 바 컴포넌트
-import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
 
 function Navbar() {
   const [activeSection, setActiveSection] = useState("hero");
   const [isScrolled, setIsScrolled] = useState(false);
+  const navRef = useRef(null);
   const location = useLocation();
   const isHomePage = location.pathname === "/";
 
-  // [advice from AI] 스크롤 이벤트 리스너로 네비게이션 배경 변경
+  // [advice from AI] 페이지 변경시 activeSection 업데이트
+  useEffect(() => {
+    if (location.pathname.startsWith("/blog")) {
+      setActiveSection("blog"); // 블로그 페이지일 때는 별도 상태로 설정
+    } else if (isHomePage) {
+      setActiveSection("hero"); // 홈페이지일 때는 hero로 초기화
+    }
+  }, [location.pathname, isHomePage]);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -20,13 +29,10 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // [advice from AI] 스크롤 스파이 기능
   useEffect(() => {
-    if (!isHomePage) return;
-
-    const sections = ["hero", "work", "about", "contact"];
+    const sections = ["hero", "portfolio", "about", "archiving"]; // [advice from AI] archiving 섹션 추가
     const observerOptions = {
-      rootMargin: "-50% 0px -50% 0px",
+      rootMargin: "-120px 0px -50% 0px",
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -45,26 +51,40 @@ function Navbar() {
     return () => observer.disconnect();
   }, [isHomePage]);
 
-  // [advice from AI] 스무스 스크롤 함수
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+  const handleNavClick = (item) => {
+    // [advice from AI] 페이지 이동이 필요한 경우와 스크롤만 필요한 경우 구분
+    if (item.path === "/blog") {
+      window.location.href = "/blog";
+    } else if (item.path === "/" && !isHomePage) {
+      // 다른 페이지에서 홈페이지 섹션으로 이동하는 경우
+      window.location.href = `/#${item.id}`;
+    } else if (isHomePage) {
+      // 홈페이지 내에서 섹션 스크롤
+      const element = document.getElementById(item.id);
+      if (element) {
+        const navHeight = navRef.current
+          ? navRef.current.offsetHeight + 30
+          : 120;
+        const elementPosition = element.offsetTop - navHeight;
+        window.scrollTo({
+          top: elementPosition,
+          behavior: "smooth",
+        });
+      }
     }
   };
 
   const navItems = [
-    { id: "hero", label: "Home" },
-    { id: "work", label: "Work" },
-    { id: "about", label: "About" },
-    { id: "contact", label: "Contact" },
+    { id: "hero", label: "Home", path: "/" },
+    { id: "portfolio", label: "Portfolio", path: "/" },
+    { id: "about", label: "About", path: "/" },
+    { id: "archiving", label: "Archiving", path: "/" },
+    { id: "blog", label: "Blog", path: "/blog" }, // [advice from AI] Blog 메뉴 추가
   ];
 
   return (
     <motion.nav
+      ref={navRef}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -75,46 +95,50 @@ function Navbar() {
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link
-            to="/"
-            className="text-2xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
-            Jerry Kim
-          </Link>
-
-          {/* Navigation Menu */}
-          <div className="hidden md:flex space-x-8">
-            {isHomePage ? (
-              // [advice from AI] 홈페이지에서는 스크롤 네비게이션
-              navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`relative px-3 py-2 text-sm font-medium transition-colors ${
-                    activeSection === item.id
-                      ? "text-blue-600"
-                      : "text-gray-600 hover:text-gray-900"
-                  }`}>
-                  {item.label}
-                  {activeSection === item.id && (
-                    <motion.div
-                      layoutId="activeSection"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600"
-                      initial={false}
-                    />
-                  )}
-                </button>
-              ))
-            ) : (
-              // [advice from AI] 다른 페이지에서는 홈으로 돌아가는 버튼
-              <Link
-                to="/"
-                className="px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
-                ← Back to Home
-              </Link>
-            )}
+          <div
+            className="text-2xl font-bold text-gray-900 cursor-pointer"
+            onClick={() => (window.location.href = "/")}>
+            parkjieun.io
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Navigation Menu */}
+          <div className="flex space-x-8 ">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => handleNavClick(item)}
+                className={`relative px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 ${
+                  activeSection === item.id
+                    ? "text-primary-80"
+                    : "text-gray-600 hover:text-gray-900"
+                }`}>
+                <span>{item.label}</span>
+                {/* [advice from AI] Blog 메뉴에만 링크 아이콘 추가 */}
+                {item.id === "blog" && (
+                  <svg
+                    className="w-3 h-3"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                )}
+                {activeSection === item.id && (
+                  <motion.div
+                    layoutId="activeSection"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-80"
+                    initial={false}
+                  />
+                )}
+              </button>
+            ))}
+          </div>
+
           <button className="md:hidden p-2 text-gray-600 hover:text-gray-900">
             <svg
               className="w-6 h-6"
