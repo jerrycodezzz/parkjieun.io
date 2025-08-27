@@ -411,7 +411,6 @@ export const projects = [
   },
 ];
 
-// [advice from AI] 기술 스택 정보를 정의합니다
 export const skills = {
   frontend: [
     "React",
@@ -434,14 +433,12 @@ export const skills = {
   tools: ["Git", "Docker", "AWS", "Figma", "Notion", "Jupyter Notebook"],
 };
 
-// [advice from AI] 개인 정보를 정의합니다
 export const personalInfo = {
   name: "박지은",
   title: "Full Stack Developer",
   bio: "웹 개발에 열정을 가진 풀스택 개발자입니다. 사용자 경험을 중시하며, 깔끔하고 효율적인 코드를 작성하는 것을 추구합니다.",
   email: "jerrycodezzz@gmail.com",
   github: "https://github.com/jerrycodezzz",
-  // [advice from AI] 새로운 About 섹션을 위한 상세 정보
   introduction: {
     name: "박지은 (Jerry)",
     role: "AI 기반 음성처리 & 풀스택 개발자",
@@ -456,9 +453,8 @@ export const personalInfo = {
       "시스템 설계",
     ],
   },
-  // [advice from AI] 개인 프로필 상세 정보 추가
   profile: {
-    photo: "src/data/jieunpark_photo.jpeg",
+    photo: "public/jieunpark_photo.jpeg",
     name: "박지은 (Jieun Park)",
     birthDate: "1996.11.11",
     phone: "+82-10-2210-2792",
