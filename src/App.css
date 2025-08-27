@@ -1,4 +1,3 @@
-/* [advice from AI] 포트폴리오용 기본 스타일 및 스무스 스크롤 설정 */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
 :root {
   font-family: "Pretendard", "Noto Sans KR", sans-serif;
@@ -16,7 +15,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* [advice from AI] Tailwind CSS의 line-clamp 유틸리티 추가 */
 .line-clamp-3 {
   overflow: hidden;
   display: -webkit-box;
@@ -24,12 +22,10 @@ body {
   -webkit-line-clamp: 3;
 }
 
-/* [advice from AI] 애니메이션 성능 최적화 */
 * {
   box-sizing: border-box;
 }
 
-/* [advice from AI] 스크롤바 스타일링 (선택사항) */
 ::-webkit-scrollbar {
   width: 8px;
 }

@@ -25,7 +25,7 @@ function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl font-light text-gray-600 mb-8 max-w-3xl mx-auto">
+            className="text-lg md:text-2xl font-light text-gray-600 mb-8 max-w-3xl mx-auto">
             {personalInfo.title}로서 {personalInfo.bio}
           </motion.p>
 

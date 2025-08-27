@@ -8,11 +8,13 @@ import ProfileCard from "../components/ProfileCard";
 
 function About() {
   const [isMobile, setIsMobile] = useState(false);
-  const [showAllTimeline, setShowAllTimeline] = useState(false); // [advice from AI] 타임라인 전체 보기 상태
+  const [showAllTimeline, setShowAllTimeline] = useState(false);
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 768); // md breakpoint
+      const mobile = window.innerWidth < 768;
+      console.log("Screen width:", window.innerWidth, "isMobile:", mobile);
+      setIsMobile(mobile);
     };
 
     checkScreenSize();
@@ -224,7 +226,7 @@ function About() {
   return (
     <section
       id="about"
-      className="w-full from-white to-primary-20 bg-gradient-to-b min-h-screen px-32">
+      className="w-full from-white to-primary-20 bg-gradient-to-b min-h-screen ">
       <div className="w-full max-w-none mx-auto">
         {/* 1. Introduction Section */}
         <motion.div
@@ -240,21 +242,25 @@ function About() {
             <ProfileCard info={personalInfo} skills={skills} />
           </div>
         </motion.div>
-
-        {/* 2. Growth Timeline Section */}
+      </div>
+      {/* 2. Growth Timeline Section */}
+      <div className="w-full  sm:px-0 md:px-16 lg:px-24 xl:px-32 2xl:px-80">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}>
-          <div className="flex justify-center w-full px-80">
-            <div className="w-full p-8">
+          transition={{ duration: 0.8 }}>
+          <div className="flex justify-center w-full px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-80">
+            <div className="w-full p-2 sm:p-4 md:p-6 lg:p-8">
               <Timeline
                 items={displayedItems}
                 orientation="vertical"
                 position={isMobile ? "left" : "center"}
-                compact={isMobile}
                 animated={true}
+                className={
+                  isMobile
+                    ? "timeline-mobile-override"
+                    : "timeline-desktop-override"
+                }
               />
 
               {!showAllTimeline && (

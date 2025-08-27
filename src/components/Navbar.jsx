@@ -1,4 +1,3 @@
-// [advice from AI] 상단 고정 네비게이션 바 컴포넌트
 import { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
@@ -11,12 +10,11 @@ function Navbar() {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
 
-  // [advice from AI] 페이지 변경시 activeSection 업데이트
   useEffect(() => {
     if (location.pathname.startsWith("/blog")) {
-      setActiveSection("blog"); // 블로그 페이지일 때는 별도 상태로 설정
+      setActiveSection("blog");
     } else if (isHomePage) {
-      setActiveSection("hero"); // 홈페이지일 때는 hero로 초기화
+      setActiveSection("hero");
     }
   }, [location.pathname, isHomePage]);
 
@@ -30,7 +28,7 @@ function Navbar() {
   }, []);
 
   useEffect(() => {
-    const sections = ["hero", "portfolio", "about", "archiving"]; // [advice from AI] archiving 섹션 추가
+    const sections = ["hero", "portfolio", "about", "archiving"];
     const observerOptions = {
       rootMargin: "-120px 0px -50% 0px",
     };
@@ -52,7 +50,6 @@ function Navbar() {
   }, [isHomePage]);
 
   const handleNavClick = (item) => {
-    // [advice from AI] 페이지 이동이 필요한 경우와 스크롤만 필요한 경우 구분
     if (item.path === "/blog") {
       window.location.href = "/blog";
     } else if (item.path === "/" && !isHomePage) {
@@ -79,7 +76,7 @@ function Navbar() {
     { id: "portfolio", label: "Portfolio", path: "/" },
     { id: "about", label: "About", path: "/" },
     { id: "archiving", label: "Archiving", path: "/" },
-    { id: "blog", label: "Blog", path: "/blog" }, // [advice from AI] Blog 메뉴 추가
+    { id: "blog", label: "Blog", path: "/blog" },
   ];
 
   return (
