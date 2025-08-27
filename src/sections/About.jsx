@@ -20,7 +20,6 @@ function About() {
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
-  // [advice from AI] 타임라인 데이터 정의
   const timelineItems = [
     {
       id: "1",
