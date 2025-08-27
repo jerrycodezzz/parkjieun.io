@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>박지은 - Portfolio</title>
+    <script>
+      // GitHub Pages SPA redirect script
+      // 현재 URL을 index.html로 리다이렉트하면서 경로 정보를 보존
+      const path = window.location.pathname.slice(1);
+      const query = window.location.search;
+      const hash = window.location.hash;
+
+      if (path) {
+        window.location.replace(
+          window.location.origin +
+            "/?redirect=" +
+            encodeURIComponent(path + query + hash)
+        );
+      }
+    </script>
+  </head>
+  <body>
+    <div
+      style="text-align: center; padding: 50px; font-family: Arial, sans-serif">
+      <h2>페이지를 로딩중입니다...</h2>
+      <p>잠시만 기다려주세요.</p>
+    </div>
+  </body>
+</html>
