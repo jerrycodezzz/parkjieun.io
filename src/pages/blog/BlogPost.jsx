@@ -101,7 +101,7 @@ function BlogPost() {
   }
 
   return (
-    <div className="min-h-screen bg-white pt-20">
+    <div className="min-h-screen bg-gray-50 pt-20">
       <article className="container mx-auto px-6 py-12 max-w-5xl">
         {" "}
         {/* 브레드크럼 */}
@@ -179,15 +179,19 @@ function BlogPost() {
               code({ inline, className, children, ...props }) {
                 const match = /language-(\w+)/.exec(className || "");
                 return !inline && match ? (
-                  <Code language={match[1]} className="my-4">
+                  <Code
+                    theme="dark"
+                    language={match[1]}
+                    className="my-4 bg-gray-100 px-1 py-0.5 rounded text-sm">
                     {String(children).replace(/\n$/, "")}
                   </Code>
                 ) : (
-                  <code
+                  <Code
+                    theme="dark"
                     className="bg-gray-100 px-1 py-0.5 rounded text-sm"
                     {...props}>
                     {children}
-                  </code>
+                  </Code>
                 );
               },
               h1: ({ children }) => (

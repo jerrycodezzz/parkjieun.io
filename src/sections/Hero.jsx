@@ -25,7 +25,7 @@ function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            className="text-xl md:text-2xl font-light text-gray-600 mb-8 max-w-3xl mx-auto">
             {personalInfo.title}로서 {personalInfo.bio}
           </motion.p>
 
@@ -34,7 +34,7 @@ function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button
+            {/* <Button
               type="primary"
               size="lg"
               onClick={() => {
@@ -48,11 +48,10 @@ function Hero() {
                 }
               }}>
               프로젝트 보러가기
-            </Button>
+            </Button> */}
           </motion.div>
         </motion.div>
 
-        {/* [advice from AI] 스크롤 인디케이터 */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

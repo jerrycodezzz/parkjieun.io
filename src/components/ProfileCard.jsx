@@ -17,27 +17,27 @@ function ProfileCard({ info, skills }) {
           {/* 연락처 정보 */}
           <div className="space-y-3 mb-4 text-sm">
             <div className="flex items-center gap-2 text-gray-600">
-              <Calendar className="w-4 h-4 text-blue-500" />
+              <Calendar className="w-4 h-4 text-primary-50" />
               <span>{info.profile.birthDate}</span>
             </div>
             <div className="flex items-center gap-2 text-gray-600">
-              <Phone className="w-4 h-4 text-blue-500" />
+              <Phone className="w-4 h-4 text-primary-50" />
               <span>{info.profile.phone}</span>
             </div>
             <div className="flex items-center gap-2 text-gray-600">
-              <Mail className="w-4 h-4 text-blue-500" />
+              <Mail className="w-4 h-4 text-primary-50" />
               <a
                 href={`mailto:${info.profile.email}`}
-                className="hover:text-blue-600 transition-colors">
+                className="hover:text-primary-50 transition-colors">
                 {info.profile.email}
               </a>
             </div>
             <div className="flex items-center gap-2 text-gray-600">
-              <MapPin className="w-4 h-4 text-blue-500" />
+              <MapPin className="w-4 h-4 text-primary-50" />
               <span>{info.profile.location}</span>
             </div>
             <div className="flex items-center gap-2 text-gray-600">
-              <Github className="w-4 h-4 text-blue-500" />
+              <Github className="w-4 h-4 text-primary-50" />
               <a
                 href={info.profile.github}
                 target="_blank"
