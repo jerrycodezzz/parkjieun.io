@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
 import { personalInfo, skills } from "../data/projects";
-import { Timeline, Tag, Button } from "@jerrycodezzz/ui-kit";
+import { Timeline, Tag, Button, Typography } from "@jerrycodezzz/ui-kit";
 import { useState, useEffect } from "react";
 import { MapPin } from "lucide-react";
 import ProfileCard from "../components/ProfileCard";
@@ -224,27 +224,27 @@ function About() {
     : timelineItems.slice(0, 3);
 
   return (
-    <section
-      id="about"
-      className="w-full from-white to-primary-20 bg-gradient-to-b min-h-screen ">
-      <div className="w-full max-w-none mx-auto">
+    <section id="about" className="w-full min-h-screen ">
+      <div className="mx-auto flex flex-col  from-white to-primary-20 bg-gradient-to-b">
         {/* 1. Introduction Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+          className="text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 ">
             About Me
           </h2>
-          <div className="max-w-8xl mx-auto">
-            <ProfileCard info={personalInfo} skills={skills} />
-          </div>
         </motion.div>
+        <ProfileCard info={personalInfo} skills={skills} />
       </div>
       {/* 2. Growth Timeline Section */}
-      <div className="w-full  sm:px-0 md:px-16 lg:px-24 xl:px-32 2xl:px-80">
+      <div className="from-primary-20 to-primary-30 bg-gradient-to-b w-full pt-20 sm:px-0 md:px-16 lg:px-24 xl:px-64 2xl:px-80">
+        <h4 className="text-center text-2xl text-primary-80 font-light mb-10">
+          Timeline
+        </h4>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -2,7 +2,6 @@
 @import "tailwindcss";
 @import "@jerrycodezzz/ui-kit/dist/styles.css";
 
-/* [advice from AI] 포트폴리오용 기본 스타일 및 스무스 스크롤 설정 */
 html {
   scroll-behavior: smooth;
 }
@@ -16,7 +15,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* [advice from AI] Tailwind CSS의 line-clamp 유틸리티 추가 */
 .line-clamp-2 {
   overflow: hidden;
   display: -webkit-box;
@@ -31,12 +29,10 @@ body {
   -webkit-line-clamp: 3;
 }
 
-/* [advice from AI] 애니메이션 성능 최적화 */
 * {
   box-sizing: border-box;
 }
 
-/* [advice from AI] 스크롤바 스타일링 (선택사항) */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -52,34 +48,4 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #a8a8a8;
-}
-
-/* [advice from AI] 로고 그라데이션 애니메이션 */
-@keyframes gradient-x {
-  0%,
-  100% {
-    background-size: 200% 200%;
-    background-position: left center;
-  }
-  50% {
-    background-size: 200% 200%;
-    background-position: right center;
-  }
-}
-
-.animate-gradient-x {
-  background: linear-gradient(
-    -45deg,
-    #ee7752,
-    #e73c7e,
-    #23a6d5,
-    #23d5ab,
-    #6b73ff,
-    #9b59b6
-  );
-  background-size: 400% 400%;
-  animation: gradient-x 4s ease infinite;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
