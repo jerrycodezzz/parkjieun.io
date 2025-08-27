@@ -454,7 +454,7 @@ export const personalInfo = {
     ],
   },
   profile: {
-    photo: "public/jieunpark_photo.jpeg",
+    photo: "/jieunpark_photo.jpeg",
     name: "박지은 (Jieun Park)",
     birthDate: "1996.11.11",
     phone: "+82-10-2210-2792",
