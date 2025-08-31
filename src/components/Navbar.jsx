@@ -95,7 +95,7 @@ function Navbar() {
           <div
             className="text-2xl font-bold text-gray-900 cursor-pointer"
             onClick={() => (window.location.href = "/")}>
-            parkjieun.io
+            parkjieun.dev
           </div>
 
           {/* Navigation Menu */}

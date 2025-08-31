@@ -2,7 +2,7 @@
 import Hero from "../sections/Hero";
 import Portfolio from "../sections/Portfolio";
 import About from "../sections/About";
-import Archiving from "../sections/Archiving"; // [advice from AI] Archiving 섹션 추가
+import Archiving from "../sections/Archiving";
 
 function Home() {
   return (
@@ -10,7 +10,7 @@ function Home() {
       <Hero />
       <Portfolio />
       <About />
-      <Archiving /> {/* [advice from AI] Archiving 섹션을 맨 마지막에 추가 */}
+      <Archiving />
     </div>
   );
 }

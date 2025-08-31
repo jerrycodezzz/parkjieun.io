@@ -2,12 +2,11 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
 import { personalInfo } from "../data/projects";
-import { Button } from "@jerrycodezzz/ui-kit";
 function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center from-bg-white to-primary-30 bg-gradient-to-t">
+      className="min-h-screen flex items-center justify-center from-white to-primary-30 bg-gradient-to-t">
       <div className="w-full max-w-none mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -1,4 +1,3 @@
-/* [advice from AI] Tailwind CSS 기본 directives */
 @import "tailwindcss";
 @import "@jerrycodezzz/ui-kit/dist/styles.css";
 
@@ -48,4 +47,14 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #a8a8a8;
+}
+
+.from-primary-30 {
+  --tw-gradient-from: var(--color-primary-30, #ebf5ff);
+  --tw-gradient-stops: var(
+    --tw-gradient-via-stops,
+    var(--tw-gradient-position),
+    var(--tw-gradient-from) var(--tw-gradient-from-position),
+    var(--tw-gradient-to) var(--tw-gradient-to-position)
+  );
 }

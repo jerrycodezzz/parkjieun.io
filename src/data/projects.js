@@ -281,7 +281,7 @@ export const projects = [
     },
   },
   {
-    id: 2,
+    id: 3,
     slug: "intent-classifier",
     title: "Intent Classifier",
     description:

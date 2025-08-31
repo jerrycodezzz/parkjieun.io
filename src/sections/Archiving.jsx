@@ -1,7 +1,7 @@
-// [advice from AI] Archiving 섹션 - GitHub과 기술블로그로 이동하는 버튼들
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
-import { Typography, Button } from "@jerrycodezzz/ui-kit";
+
+import { Button } from "@jerrycodezzz/ui-kit";
 function Archiving() {
   const archiveItems = [
     {
@@ -60,10 +60,8 @@ function Archiving() {
   };
 
   return (
-    <section
-      id="archiving"
-      className="w-full  from-primary-20 to-primary-30 bg-gradient-to-b pb-48 pt-8">
-      <div className="w-full max-w-none mx-auto">
+    <section id="archiving" className="w-full ">
+      <div className="w-full max-w-none mx-auto from-primary-30 to-primary-40 bg-gradient-to-b min-h-screen py-32">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

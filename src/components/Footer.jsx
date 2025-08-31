@@ -11,12 +11,12 @@ function Footer() {
   const getBackgroundStyle = () => {
     if (isBlogPage) {
       return {
-        background: "#f9fafb", // bg-gray-50의 실제 색상값
+        background: "#f9fafb",
       };
     }
     return {
       background:
-        "linear-gradient(to bottom, var(--color-primary-30, #8bc7ff), var(--color-primary-40, #5eb1ff))",
+        "linear-gradient(to bottom, var(--color-primary-40, #8bc7ff), var(--color-primary-70, #5eb1ff))",
     };
   };
 
@@ -60,7 +60,7 @@ function Footer() {
 
   return (
     <footer className=" pb-8" style={getBackgroundStyle()}>
-      <div className="w-full max-w-7xl mx-auto px-4">
+      <div className="w-full max-w-7xl mx-auto px-4 max-h-screen">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* 프로필 섹션 */}
           <motion.div
