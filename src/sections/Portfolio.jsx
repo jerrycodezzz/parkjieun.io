@@ -24,7 +24,7 @@ function Portfolio() {
   return (
     <section
       id="portfolio"
-      className="w-full pb-32 from-bg-white to-primary-10 bg-gradient-to-b min-h-screen px-8 md:px-8">
+      className="w-full pb-32 from-bg-white to-primary-10 bg-gradient-to-b min-h-screen px-8 md:px-64">
       <div className="w-full max-w-none mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

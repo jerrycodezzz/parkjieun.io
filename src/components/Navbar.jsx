@@ -82,9 +82,18 @@ function Navbar() {
   return (
     <motion.nav
       ref={navRef}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 100,
+
+        display: window.innerWidth >= 768 ? "block" : "none",
+      }}
+      className={`transition-all duration-300 ${
         isScrolled || !isHomePage
           ? "bg-white/95 backdrop-blur-md shadow-lg"
           : "bg-transparent"
