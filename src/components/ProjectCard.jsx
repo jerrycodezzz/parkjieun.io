@@ -1,4 +1,3 @@
-// [advice from AI] 프로젝트 카드 컴포넌트
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
 import { Card, Tag } from "@jerrycodezzz/ui-kit";
@@ -8,16 +7,8 @@ function ProjectCard({ project, onViewDetails }) {
     <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
       <Card
         variant="outlined"
-        className="overflow-hidden hover:shadow-2xl transition-shadow cursor-pointer"
+        className=" overflow-hidden hover:shadow-2xl transition-shadow cursor-pointer"
         onClick={() => onViewDetails(project)}>
-        <div className="aspect-video overflow-hidden">
-          <img
-            src={project.thumbnail}
-            alt={project.title}
-            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-          />
-        </div>
-
         <div className="p-4">
           <div className="mb-2">
             <span className="text-xs text-primary-80 font-light">
@@ -35,11 +26,11 @@ function ProjectCard({ project, onViewDetails }) {
           </p>
 
           <div className="flex flex-wrap gap-1 mb-3">
-            {project.tech.slice(0, 6).map((tech) => (
+            {project.tech.slice(0, 11).map((tech) => (
               <Tag
-                size="xs"
+                size="sm"
                 key={tech}
-                className="px-2 py-1 bg-blue-50 text-blue-600 text-xs font-medium">
+                className="px-2 py-1 bg-blue-50 text-blue-600 text-xs font-light">
                 {tech}
               </Tag>
             ))}

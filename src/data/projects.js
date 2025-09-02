@@ -22,6 +22,7 @@ export const projects = [
       "NPM Package",
       "Compound Components",
       "Custom Hooks",
+      "UI/UX Design",
     ],
     features: [
       "체계적인 디자인 토큰 시스템 (색상, 타이포그래피, 스페이싱)",
@@ -37,7 +38,6 @@ export const projects = [
     githubUrl: "https://github.com/jerrycodezzz/frontend-template",
     category: "UI Component Library",
     year: "2025",
-    // [advice from AI] Jerry UI Kit 상세 프로젝트 정보를 추가합니다
     detailed: {
       // 1. 프로젝트 기본 정보
       projectInfo: {

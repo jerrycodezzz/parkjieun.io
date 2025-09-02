@@ -24,7 +24,7 @@ function Portfolio() {
   return (
     <section
       id="portfolio"
-      className="w-full pb-32 from-bg-white to-primary-10 bg-gradient-to-b min-h-screen px-32">
+      className="w-full pb-32 from-bg-white to-primary-10 bg-gradient-to-b min-h-screen px-8 md:px-8">
       <div className="w-full max-w-none mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -40,7 +40,7 @@ function Portfolio() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 mx-auto gap-6">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
