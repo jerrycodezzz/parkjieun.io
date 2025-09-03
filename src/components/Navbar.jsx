@@ -89,7 +89,7 @@ function Navbar() {
         top: 0,
         left: 0,
         right: 0,
-        zIndex: 100,
+        zIndex: 1,
 
         display: window.innerWidth >= 768 ? "block" : "none",
       }}

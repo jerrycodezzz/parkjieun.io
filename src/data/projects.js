@@ -1,4 +1,3 @@
-// [advice from AI] 포트폴리오 프로젝트 데이터를 정의합니다
 export const projects = [
   {
     id: 1,
@@ -168,7 +167,7 @@ export const projects = [
       "백그라운드 태스크 처리 및 폴링 기반 상태 관리",
       "PostgreSQL 기반 실험 데이터 관리 및 히스토리 추적",
     ],
-    demoUrl: "http://localhost:5173", // Frontend URL
+    demoUrl: "https://youtu.be/_DX98sc9pBA", // 데모 영상
     githubUrl: "https://github.com/jerrycodezzz/whisper",
     category: "AI/ML Audio Processing",
     year: "2025",
@@ -196,6 +195,7 @@ export const projects = [
       },
       // 4. 시스템 아키텍처 (텍스트 설명)
       architecture: {
+        diagram: "/images/projects/frami.jpg",
         overview:
           "마이크로서비스 아키텍처 기반으로 STT 처리 엔진, 화자분리 엔진, 데이터 관리 레이어, 프론트엔드 대시보드가 독립적으로 구성되어 확장성과 유지보수성을 확보",
         components: [
@@ -223,6 +223,7 @@ export const projects = [
       },
       // 5. 처리 플로우
       processFlow: {
+        diagram: "/images/projects/frami.jpg",
         sttFlow: [
           "오디오 파일 업로드 및 검증",
           "오디오 전처리 (샘플링 레이트 조정, 노이즈 제거)",
